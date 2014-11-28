@@ -1,0 +1,63 @@
+#tbl_report input[type="text"],#txt_numReport{
+	background:    #FFFFFF;
+	border: 1px solid #FFFFFF;
+		   
+}
+#tbl_report label, #lb_numR{
+	 border: 2px solid rgb(111, 114, 115);
+	 background:    #DCDCDC;
+}
+
+#firmas{
+	text-align: center;
+}
+#firmas td{
+	width: 1000px;
+}
+#firmaReporte,#firmaSistemas{
+	height: 100px;
+	width: 250px;
+	background: #FFFFFF;
+	border: 5px solid #FFFFFF;
+	border-bottom:thin solid #000000;
+}
+#header {	
+    margin: 0 auto;
+    padding: 20px;
+    width: 800px;
+}
+
+#datos{
+	border: 2px solid  rgb(111, 114, 115); 
+ 	 border-spacing: 3px 10px;
+
+}
+#datos td, #divisor td{
+	border: 1px solid #000000;
+	height: 5px;
+}
+
+.campos{
+	width: 140px;
+	text-align: right;
+	background:  rgb(111, 114, 115);
+	border: 1px solid #000000;
+
+}
+.campo_valor{
+	width: 200px;
+}
+.contTable{
+	text-align: center;
+}
+.contTable table{
+	border-spacing: 30px 30px; 
+	border-collapse: separate;
+}
+.firmas{	
+	border-bottom-color:#000000; 
+	border-bottom-style:solid;
+	border-bottom-width:2px;
+
+
+}

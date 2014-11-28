@@ -1,0 +1,43 @@
+.botons{
+	width:30px;
+	cursor: pointer;
+}
+
+#calendario{
+	text-align: right;
+	border:4px solid rgb(111, 114, 115);
+	width: 1000px;
+}
+#calendario td{
+	width: 3000px;
+}
+
+.day{
+	background-color: rgb(175, 175, 175);
+}
+#calendario #cal_header, #calendario_anestesia #cal_header{
+	text-align: center;
+}
+
+#cal_header{
+	background-color: rgb(175, 175, 175);
+}
+ 
+#internWindow,#id_turn{
+	display: none;
+}
+
+#div_back{
+	float: right;
+	
+}
+#btn_back{
+	width: 40%;
+	cursor: pointer;
+}
+
+#calendario_anestesia{
+	text-align: center;
+	border:4px solid rgb(111, 114, 115);
+	width: 450px;
+}

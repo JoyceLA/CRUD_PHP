@@ -1,0 +1,31 @@
+.fondo_form_agenda {
+			background: none repeat scroll 0 0 #E6E6E6;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 10px;
+		    width: 100%;
+		
+		}
+#tbl_cuenta{
+			text-align: center;
+			
+		}
+
+.fondo_form_ver_agenda {
+			background: none repeat scroll 0 0 #E6E6E6;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 10px;		
+		}
+.fondo_form_ver_agenda th{
+	background: #0B243B;
+ 	color: #FFFFFF;
+}
+#tbl_ver_agenda{
+			text-align: center;
+			
+		}
+.botons{
+	width:30px;
+	cursor: pointer;
+}
