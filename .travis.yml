@@ -1,0 +1,15 @@
+language: php
+
+
+# command to let run a real GUI application or web browser
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - chmod +x phpUtils/phpunit
+  - export PATH=$PATH:phpUtils/
+
+before_script: 
+  - java -jar phpUtils/selenium-server.jar &
+  - sleep 20
+script:
+  - phpunit app/test.php
