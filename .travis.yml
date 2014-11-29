@@ -12,4 +12,5 @@ before_script:
   - java -jar phpUtils/selenium-server.jar &
   - sleep 20
 script:
-  - phpunit app/test.php
+  - cd app
+  - phpunit test.php
