@@ -1,18 +1,22 @@
 <?php 
+require_once "Usuario.php";
 session_start(); 
 require_once "functions.php";
-require_once "Usuario.php";
+
 
 	$usuario = $_SESSION['user_id'];
 	$pass = $_SESSION['pass'];
 
-	$user0 = new Usuario("Maria23","452232Ga");
+	/*$user0 = new Usuario("Maria23","452232Ga");
 	$user1= new Usuario("Maria23333","6371222qwss");
 	$user2 = new Usuario("Maria2782313","62hwsqwss");
 	$user3= new Usuario("Juana62132","6323");
 	
-	$user = array($user0,$user1, $user2, $user3);
-
+	$user = array($user0,$user1, $user2, $user3);*/
+	if(isset($_SESSION['usuario'])){
+       $user = $_SESSION['usuario'];
+      
+    }
 
     
     
@@ -59,7 +63,9 @@ require_once "Usuario.php";
 	        $userNew = new Usuario($_POST['user'],$_POST['password']);
 	        
 	        $funcion = new Funciones();
-	       echo "<div align='center'>".$funcion->createUser($user,$userNew)."</div>";
+	     	$_SESSION['usuario'] = $funcion->createUser($user,$userNew);
+	       echo "<div align='center'>".$funcion->getMessageCreate()."</div>";
+	       header("location:index.php"); 
 	      
 	    }
 	    else{
