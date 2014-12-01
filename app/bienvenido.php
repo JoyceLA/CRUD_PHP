@@ -1,18 +1,19 @@
 <?php 
-session_start(); 
-require_once "functions.php";
 require_once "Usuario.php";
+session_start(); 
+
+require_once "functions.php";
+
+
 
 	$usuario = $_SESSION['user_id'];
 	$pass = $_SESSION['pass'];
  
+	if(isset($_SESSION['usuario'])){
+       $user = $_SESSION['usuario'];
 
-    $user0 = new Usuario("Maria23","452232Ga");
-	$user1= new Usuario("Maria23333","6371222qwss");
-	$user2 = new Usuario("Maria2782313","62hwsqwss");
-	$user3= new Usuario("Juana62132","6323");
+    }
 	
-	$user = array($user0,$user1, $user2, $user3);
 	
 
 ?>
@@ -58,8 +59,10 @@ require_once "Usuario.php";
 	        $userNew = new Usuario($_POST['user'],$_POST['password']);
 	        
 	        
-	         $funcion = new Funciones();
-	       echo "<div align='center'>".$funcion->updateProfile( $user,$userNow,$userNew)."</div>";
+	        $funcion = new Funciones();
+	        $_SESSION['usuario'] = $funcion->updateProfile( $user,$userNow,$userNew); 
+	          
+	       echo "<div align='center'>".$funcion->getMessageUpdate()."</div>";
 	      
 	    }
 	           
@@ -71,7 +74,9 @@ require_once "Usuario.php";
     	if($_POST['password'] == $_POST['confpassword']){
 	        $userNow = new Usuario($usuario,$pass);
 	        $funcion = new Funciones();
-	        echo "<div align='center'>".$funcion->deleteUser($user,$userNow)."</div>"; 
+	        $_SESSION['usuario'] = $funcion->deleteUser($user,$userNow);
+	       
+	        echo "<div align='center'>".$funcion->getMessageDelete()."</div>"; 
 	        header("location:index.php"); 
 	    }
 	           
