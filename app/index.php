@@ -1,23 +1,18 @@
 <?php 
-session_start();
 
 require_once "Usuario.php"; 
+session_start();
 require_once "functions.php";
 
-
-    $user = Array();
-    $user[0] = new Usuario("Maria23","452232Ga");
+    if(!isset($_SESSION['usuario'])){
+         $user = Array();
+        $user[0] = new Usuario("Maria23","452232Ga");
+            
+        $user[1]= new Usuario("Maria23333","6371222qwss");
         
-    $user[1]= new Usuario("Maria23333","6371222qwss");
-    
-    $user[2] = new Usuario("Maria2782313","62hwsqwss");
-    
-    $user[3]= new Usuario("Juana62132","6323");
-
-
-
-    
-     if(!isset($_SESSION['Usuario'])){
+        $user[2] = new Usuario("Maria2782313","62hwsqwss");
+        
+        $user[3]= new Usuario("Juana62132","6323");
         $_SESSION['usuario'] = $user;
     }
    
@@ -47,7 +42,8 @@ if(!isset($_SESSION['userid'])){
        $userNow = new Usuario($_POST['user'],$_POST['password']);
              
        $funcion = new Funciones();
-       if($funcion->searchUser( $user,$userNow) == "CUENTA ENCONTRADA"){ 
+        $_SESSION['usuario'] = $funcion->searchUser($_SESSION['usuario'],$userNow);
+       if($funcion->getMessageSearch() == "CUENTA ENCONTRADA"){ 
             $_SESSION['user_id'] = $_POST['user']; 
             $_SESSION['pass'] = $_POST['password']; 
             header("location:bienvenido.php"); 
