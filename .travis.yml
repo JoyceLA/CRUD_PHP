@@ -14,3 +14,6 @@ before_script:
 script:
   - cd app
   - phpunit test.php
+  - cd test
+  - phpunit Test.php
+  - phpunit --coverage-html . test/Test.php
