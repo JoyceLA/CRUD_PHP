@@ -1,0 +1,370 @@
+		*{
+			font-size: 14px;
+			font-family: sans-serif;
+			-moz-font-family: sans-serif;
+		    -webkit-font-family: sans-serif;
+		    -o-font-family: sans-serif;
+		    -ms-font-family: sans-serif;
+		}
+		form.login {
+		    background: none repeat scroll 0 0 #F1F1F1;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 278px;
+		}
+		form.login div {
+		    margin-bottom: 15px;
+		    overflow: hidden;
+		}
+		form.login div label {
+		    display: block;
+		    float: left;
+		    line-height: 25px;
+		}
+		form.login div input[type="text"], form.login div input[type="password"] {
+		    border: 1px solid #DCDCDC;
+		    float: right;
+		    padding: 4px;
+		}
+		form.login div input[type="submit"] {
+		    background: none repeat scroll 0 0 #DEDEDE;
+		    border: 1px solid #C6C6C6;
+		    float: right;
+		    font-weight: bold;
+		    padding: 4px 20px;
+		}
+		.error{
+			color: red;
+		    font-weight: bold;
+		    margin: 10px;
+		    text-align: center;
+		}
+		#salida {
+			text-align: right;
+			width:90%;
+		}
+		.encabezado{
+			text-align: center;
+			font-family:sans-serif,courier; 
+			font-size:30pt;
+			font-weight: bold;
+			
+
+		}
+
+		.nuevoEquipo {
+			background: none repeat scroll 0 0 #F1F1F1;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 400px;
+		
+		}
+		.formausuario {
+			background: none repeat scroll 0 0 #F1F1F1;
+		    border: 2px solid #928E8E;
+		  
+		    padding: 20px;
+		    width: 600px;
+		    height: 1000px;
+		
+		}
+		
+		
+		.reportHead{
+			color: blue;
+		    font-weight: bold;
+		    margin: 7px;
+		    text-align: center;
+			size:10px;
+		
+		}
+		.encabezadoReport {
+			width:300px;
+			border: 2px solid #928E8E;
+			text-align: center;
+		}
+		.perfil{
+			width: 90%;
+			background: #E6E6E6;
+			border: 20px solid #FFFFFF;
+			text-align: center;
+		
+		}
+
+		.perfil #foto{
+			width: 50%;
+			height: 50%;
+			margin-left: 20%;
+			margin-top: 10px;
+
+		}
+		.botones tr{
+			width: 10%;
+			border: 1px solid #928E8E;
+
+		}
+
+		.boton {
+		  background-color: rgb(111, 114, 115);
+		  color: #EEE;
+		  border: 1px solid #FFFFFF;
+		  display: table-cell;
+		  font-size: 15px;
+		  font-family: cursive;
+		  height: 30px;
+		  text-align: center;
+		  padding: 10px;
+		  vertical-align: middle;
+		  width: 200px;
+		  -moz-transition: width 1s;
+		  -webkit-transition: width 1s;
+		  -o-transition: width 1s;
+		  -ms-transition: width 1s;
+		  transition: width 1s;
+		}
+		.boton:hover {
+		  width: 300px;
+		}
+		#tag_report{
+			float:left;
+			width: 10em;
+		}
+		#numReport{
+			margin: 0px;
+			
+		}
+		#lb_fecha{
+			float:right;
+		}
+		div.buttons{
+			background-size: 1px;
+			background: #FFFFFF;
+			margin-right: 5px;
+			float:left;	
+
+		}
+
+		div.buttons input{
+			border-radius: 10px;
+		}
+
+		div.formulario{
+			float:center;
+			width: 1000px;
+			height: 700px;
+			position: absolute;
+			margin: 30px auto;
+			
+		}
+		
+		.fondo{
+
+			background: #FFFFFF;
+			border:  20px solid #FFFFFF;
+		}
+		.fondo_form {
+			background: none repeat scroll 0 0 #E6E6E6;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 700px;
+		
+		}
+
+
+		.form_report{
+			background: #E6E6E6;
+
+		}
+		#welcome{
+			color: #2A7DD6;
+			font-size: 18px;
+			font-family: sans-serif;
+			font-style: italic;
+			font-weight: bold;
+			text-align: left;
+		}
+
+		#user{
+			float: right;
+			font-size: 12px;
+			font-family: sans-serif;
+			font-weight: 900;
+		}
+		.txta_descpReport{
+			resize: none;
+
+		}
+
+
+
+		iframe{
+			border:0.1mm Solid #C2C2C2;
+		}
+		/*Funciones de los botones laterales */
+		#form_agenda, #form_registro, #form_desbloquea, #form_adminhorarios,#form_verMiAgenda,#form_adminAgenda{
+			display:none;
+		}
+		/*Mostrar los links para mostrar el iframe*/
+		#seeWinRegistro, #seeWinDesbloquear, #seeWinHorarios, #seeWinSala, #seeWinAgendar, #seeWinVerAgenda, #seeWinAdmiAgenda{
+			display:inline;
+		}
+		
+ 
+ 		.historial{
+ 			 overflow:scroll;
+ 			 height: 43em;
+ 			 width: auto;
+
+ 		}
+
+		#lb_reportes {
+		  background-color: rgb(111, 114, 115);
+		  color: #EEE;
+		  border: 1px solid #FFFFFF;
+		  display: table-cell;
+		  font-size: 17px;
+		 
+		  text-align: center;
+		  padding: 10px;
+		  vertical-align: middle;
+		  width: 178px;
+		}
+		.hreportes{
+			table-layout: auto;
+		}
+
+		.hreportes th{
+			background-color:#E6E6E6;
+			border: white 5px groove; 
+			
+		}
+		
+		.celdaH:hover{
+			background-color: #CAC6C6; 
+
+		}
+
+
+		.celdaH:checked{
+			background-color: #000000; 
+			
+		}
+
+		A:link, A:visited{
+			 text-decoration: none
+		}
+
+		.requiredText{
+			font-size: 20px;
+			color: black;
+		    
+		    text-align: center;
+		}
+		
+		
+		/*#BtnReporte{
+			background-image:url("../img/save.png");
+			background-repeat:no-repeat;
+			height:70px;
+			width:70px;
+		 	background-position:center;
+		 	font-weight: bold;
+		}*/
+
+		.fondo_form-reporte {
+			
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 700px;
+		
+		}
+
+		#fecha{
+			display: none;
+		}
+
+		#iconI{
+			float:left;
+		}
+		#iconG{
+			float:right;
+		}
+
+
+
+
+		/******************************************************************************************************************************
+		******************************************************************************************************************************/
+		#errorCuenta{
+			color: red;
+			font-weight: bold;
+			text-align: center;
+
+		}
+
+		#prohibido_img{
+			text-align: center;
+		}
+
+		.tagStop{
+			color: red;
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+
+		/******************************************************************************************************************************
+		*******************************************************************************************************************************/
+		/*ADMINISTRARHORARIO.PHP*/
+		.fondo_admin{
+
+			background: #FFFFFF;
+			border:  2px solid #FFFFFF;
+		}
+		
+		.fondo_form_medic {
+			background: none repeat scroll 0 0 #E6E6E6;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 650px;
+		
+		}
+		#list_medicos{
+			display:none;
+		}
+		
+		#doc_hrentrada{
+			text-align: right;
+		}
+		#acciones{
+			text-align: right;
+			width: 80%;
+		}
+		.botons{
+			width:30px;
+			cursor: pointer;
+		}
+
+/*******************************************************************
+********************************************************************/
+/*agendarcirugia.php*/
+
+.fondo_form_agenda {
+			background: none repeat scroll 0 0 #E6E6E6;
+		    border: 2px solid #928E8E;
+		    margin: 0 auto;
+		    padding: 20px;
+		    width: 600px;
+		
+		}
+
+textarea{
+	resize:none;
+}
+
+
