@@ -7,14 +7,13 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - chmod +x phpUtils/phpunit
   - export PATH=$PATH:phpUtils/
-install:
   - sudo apt-get install php-codesniffer
   - wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer
   - sudo chmod a+x php-cs-fixer
-  - sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
+  - export PATH=$PATH:php-cs-fixer
   - wget https://phar.phpunit.de/phploc.phar
   - chmod +x phploc.phar
-  - mv phploc.phar /usr/local/bin/phploc
+  - export PATH=$PATH:phploc.phar
 
 before_script: 
   - java -jar phpUtils/selenium-server.jar &
@@ -23,23 +22,23 @@ script:
   - cd app
   - php-cs-fixer fix Usuario.php
   - phpcs --standard=Zend Usuario.php
-  - phploc Usuario.php
+  - phploc.phar Usuario.php
   - php-cs-fixer fix functions.php
   - phpcs --standard=Zend functions.php
-  - phploc function.php
+  - phploc.phar function.php
   - php-cs-fixer fix bienvenido.php
   - phpcs --standard=Zend bienvenido.php
-  - phploc bienvenido.php
+  - phploc.phar bienvenido.php
   - php-cs-fixer fix crearcuenta.php
   - phpcs --standard=Zend crearcuenta.php
-  - phploc crearcuenta.php
+  - phploc.phar crearcuenta.php
   - php-cs-fixer fix index.php
   - phpcs --standard=Zend index.php
-  - phploc index.php
+  - phploc.phar index.php
   - cd test
   - php-cs-fixer fix test.php
   - phpcs --standard=Zend test.php
-  - phploc test.php
+  - phploc.phar test.php
   - phpunit test.php
   - cd ..
   - phpunit --coverage-html . functions.php
