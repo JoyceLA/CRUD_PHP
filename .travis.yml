@@ -42,14 +42,17 @@ script:
   - phploc app/bienvenido.php
   - phploc app/crearcuenta.php
   
-  - php-cs-fixer.phar fix  app/test/Test.php
+  - php php-cs-fixer.phar fix  app/test/Test.php
   - phpcs --standard=Zend  app/test/Test.php
   - phploc app/test/Test.php
   - phpunit app/test/Test.php
   - phpunit --coverage-text . test/Test.php
   
 
-  - phpunit app/test/pruebas_selenium/.
+  - phpunit app/test/pruebas_selenium/crear_usuario.php
+  - phpunit app/test/pruebas_selenium/eliminar_usuario.php
+  - phpunit app/test/pruebas_selenium/ingresar_con_exito.php
+  - phpunit app/test/pruebas_selenium/iniciar_sesion_sin_estar_registrado.php
   
   - phpunit app/test/testMock.php
  
