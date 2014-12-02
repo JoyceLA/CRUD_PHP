@@ -41,12 +41,15 @@ script:
   - phploc app/crearcuenta.php
 
 
-  ##Test.php
+  ##UntTest  Test.php
   - php-cs-fixer.phar fix  app/test/Test.php
   - phpcs --standard=Zend  app/test/Test.php
   - phploc app/test/Test.php
   - phpunit app/test/Test.php
   - phpunit --coverage-text . test/Test.php
+  
+  ##TestSelenium
+  -phpunit app/test/pruebas_selenium/.
  
  
   
