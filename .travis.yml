@@ -28,9 +28,7 @@ before_script:
 script:
   - php php-cs-fixer.phar fix app/Usuario.php
   - php php-cs-fixer.phar fix app/functions.php
-  - ./php-cs-fixer.phar fix app/index.php
-  - ./php-cs-fixer.phar fix app/bienvenido.php
-  - ./php-cs-fixer.phar fix app/crearcuenta.php
+ 
   
   - phpcs --standard=Zend app/Usuario.php
   - phpcs --standard=Zend app/functions.php
