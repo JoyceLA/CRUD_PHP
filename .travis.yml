@@ -53,7 +53,7 @@ script:
   - phploc.phar Test.php
   - phpunit Test.php
   - cd ..
-  - phpunit --coverage-html . functions.php
+  - phpunit --coverage-html . Test.php
  
  
   
