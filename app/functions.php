@@ -201,4 +201,10 @@ class Funciones
 
         return $users;
     }
+    
+    /*FUNCION PARA PROBAR EL MOCK*/
+    public function encryptPass()
+    {
+       return "RASAHolaRSSA";
+    }
 }
