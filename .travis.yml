@@ -1,9 +1,6 @@
 language: php
 php:
   - 5.5.9
-  #- 5.3.3
-  #- 5.4
-  #- 5.5
 
 # command to let run a real GUI application or web browser
 before_install:
@@ -16,51 +13,12 @@ before_install:
 before_script: 
   - java -jar phpUtils/selenium-server.jar &
   - sleep 20
-  ## PHP_CodeSniffer
-  - pear install pear/PHP_CodeSniffer
-  ## PHPLOC
-  - pear install phpunit/phploc
-   ##phpunit_stroy
-  - pear install phpunit/phpunit_story
-  - phpenv rehash
+ 
   
-  ##php-cs-fixer
-  - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
-  - chmod +x php-cs-fixer.phar
  
 
 script:
-  - php php-cs-fixer.phar fix app/Usuario.php
-  - php php-cs-fixer.phar fix app/functions.php
-  #- php php-cs-fixer.phar fix app/index.php
-  #- php php-cs-fixer.phar fix app/bienvenido.php
-  #- php php-cs-fixer.phar fix app/crearcuenta.php
   
-  #- phpcs --standard=Zend -n app/Usuario.php
-  #- phpcs --standard=Zend -n app/functions.php
-  #- phpcs --standard=Zend -n app/index.php
-  #- phpcs --standard=Zend -n app/bienvenido.php
-  #- phpcs --standard=Zend -n app/crearcuenta.php
-  
-  #- phploc app/Usuario.php
-  #- phploc app/functions.php
-  #- phploc app/index.php
-  #- phploc app/bienvenido.php
-  #- phploc app/crearcuenta.php
-  
-  - php php-cs-fixer.phar fix  app/test/Test.php
-  - phpcs --standard=Zend  -n app/test/Test.php
-  - phploc app/test/Test.php
-  - cd app/test
-  - phpunit Test.php
-  - phpunit --coverage-text . Test.php
-  - phpunit testMock.php
-  
-  #- cd pruebas_selenium
-  #- phpunit crear_usuario.php
-  #- phpunit eliminar_usuario.php
-  #- phpunit ingresar_con_exito.php
-  #- phpunit iniciar_sesion_sin_estar_registrado.
   - cd app/testCase
   - phpunit --printer PHPUnit_Extensions_Story_ResultPrinter_Text testCaseActualizar.php
   - phpunit --printer PHPUnit_Extensions_Story_ResultPrinter_Text testCaseBorrar.php
