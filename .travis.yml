@@ -21,6 +21,7 @@ before_script:
   - phpenv rehash
   ## PHPLOC
   - pear install phpunit/phploc
+  - phpenv rehash
   ##php-cs-fixer
   - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
 script:
@@ -32,25 +33,25 @@ script:
   ##functions.php
   - php php-cs-fixer.phar fix functions.php
   - phpcs --standard=Zend functions.php
-  - php phploc.phar functions.php
+  - phploc functions.php
   ##bienvenido.php
   - php-cs-fixer.phar fix bienvenido.php
   - phpcs --standard=Zend bienvenido.php
-  - phploc.phar bienvenido.php
+  - phploc bienvenido.php
   ##crearcuenta.php
   - php-cs-fixer.phar fix crearcuenta.php
   - phpcs --standard=Zend crearcuenta.php
-  - phploc.phar crearcuenta.php
+  - phploc crearcuenta.php
   ##index.php
   - php-cs-fixer.phar fix index.php
   - phpcs --standard=Zend index.php
-  - phploc.phar index.php
+  - phploc index.php
 
   - cd test
   ##Test.php
   - php-cs-fixer.phar fix Test.php
   - phpcs --standard=Zend Test.php
-  - phploc.phar Test.php
+  - phploc Test.php
   - phpunit Test.php
   - cd ..
   - phpunit --coverage-html . Test.php
