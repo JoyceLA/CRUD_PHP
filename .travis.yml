@@ -32,7 +32,7 @@ script:
   - php-cs-fixer fix test.php
   - phpcs --standard=Zend test.php
   - phpunit test.php
-  - phpunit --coverage-html . test/Test.php
+  - phpunit --coverage-html . test.php
  
  
   
