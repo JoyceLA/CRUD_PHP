@@ -5,7 +5,7 @@
  * PHP version 5.5.9
  *
  * @category Class
- * @package  App
+ * @package 
  * @author   <lumajo@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
@@ -15,7 +15,7 @@
  * Usuario
  *
  * @category Class
- * @package  App
+ * @package  
  * @author   <lumajo@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     http://www.hashbangcode.com/
