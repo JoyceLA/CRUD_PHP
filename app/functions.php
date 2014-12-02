@@ -1,187 +1,204 @@
 <?php
-		
-	class Funciones{	
-		private $create = -2;
-		private $delete = -2;
-		private $update = -2;
-		private $search = -2;
+/**
+ * Funciones
+ *
+ * PHP version 5.5.9
+ *
+ * @category Class
+ * @package  App
+ * @author   <lumajo@gmail.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://www.hashbangcode.com/
+ *
+ */
+/**
+ * Funciones
+ *
+ * @category Class
+ * @package  App
+ * @author   <lumajo@gmail.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://www.hashbangcode.com/
+ *
+ */
+class Funciones
+{
+    private $_create = -2;
+    private $_delete = -2;
+    private $_update = -2;
+    private $_search = -2;
 
-		function getMessageUpdate(){
-			if($this->update == 1){
-				return "USUARIO ACTUALIZADO";
-			}
-			elseif ($this->update == -1) {
-				return "ERROR CUENTA NO ENCONTRADA";
-			}
-			elseif($this->update == 0){
-				return "USUARIO O CONTRASEÑA INVALIDO";
-			}
-		}
+    public function getMessageUpdate()
+    {
+        if ($this->update == 1) {
+            return "USUARIO ACTUALIZADO";
+        } elseif ($this->update == -1) {
+            return "ERROR CUENTA NO ENCONTRADA";
+        } elseif ($this->update == 0) {
+            return "USUARIO O CONTRASEÑA INVALIDO";
+        }
+    }
 
-		function updateProfile($ArrayUsers,$userNow,$userNew){
-			$longitud = count($ArrayUsers);
-			$boolean = 0;
-			if($longitud >0){
-				if($userNew->getUser() == ""){
-					$this->update = 0;
-					$boolean = 1;
-				}
-				if( $userNew->getPassword() == ""){
-					$this->update = 0;
-					$boolean = 1;
-				}
-				if($boolean == 0){
-					for ($i=0; $i < $longitud; $i++) { 
-						if(($ArrayUsers[$i]->getUser() == $userNow->getUser()) and ($ArrayUsers[$i]->getPassword() == $userNow->getPassword())){
-							$ArrayUsers[$i]->setUser($userNew->getUser());
-							$ArrayUsers[$i]->setPassword($userNew->getPassword());
-							$this->update = 1;
-						}	
-					}
-					if($this->update != 1){
-						$this->update = -1;
-					}
-				   
-				}
-			}
-			else{
-				$this->update = -1;
-			}
-			return $ArrayUsers;
-		}
-		function getMessageSearch(){
-			if($this->search == 1){
-				return "CUENTA ENCONTRADA";
-			}
-			elseif ($this->search == -1) {
-				return "ERROR CUENTA NO ENCONTRADA";
-			}
-			elseif($this->search == 0){
-				return "USUARIO O CONTRASEÑA INVALIDO";
-			}
-		}
+    public function updateProfile($users, $userNow, $userNew)
+    {
+        $longitud = count($users);
+        $boolean = 0;
+        if ($longitud >0) {
+            if ($userNew->getUser() == "") {
+                $this->update = 0;
+                $boolean = 1;
+            }
+            if ($userNew->getPassword() == "") {
+                $this->update = 0;
+                $boolean = 1;
+            }
+            if ($boolean == 0) {
+                for ($i = 0; $i < $longitud; $i++) {
+                    if ($users[$i]->getUser() == $userNow->getUser()) {
+                        if ($users[$i]->getPassword() == $userNow->getPassword()) {
+                            $users[$i]->setUser($userNew->getUser());
+                            $users[$i]->setPassword($userNew->getPassword());
+                            $this->update = 1;
+                        }
+                    }
+                }
+                if ($this->update != 1) {
+                    $this->update = -1;
+                }
+            }
+        } else {
+            $this->update = -1;
+        }
 
-		function searchUser($ArrayUsers,$userNow){
-			$longitud = count($ArrayUsers);
-			$boolean = 0;
-			if($longitud >0){
-				if($userNow->getUser() == ""){
-					$this->search = 0;
-					$boolean = 1;
-				}
-				if( $userNow->getPassword() == ""){
-					$this->search = 0;
-					$boolean = 1;
-				}
-				if($boolean == 0){
-					for ($i=0; $i < $longitud; $i++) { 
-						if(($ArrayUsers[$i]->getUser() == $userNow->getUser()) and ($ArrayUsers[$i]->getPassword() == $userNow->getPassword())){
-							$this->search = 1;
-							
-						}	
-					}
-					if($this->search != 1){
-						$this->search = -1;
-					}
-						
-				}
-			}
-			else{
-				$this->search = -1;
-			}
-			return $ArrayUsers;
-		}
+        return $users;
+    }
+    public function getMessageSearch()
+    {
+        if ($this->search == 1) {
+            return "CUENTA ENCONTRADA";
+        } elseif ($this->search == -1) {
+            return "ERROR CUENTA NO ENCONTRADA";
+        } elseif ($this->search == 0) {
+            return "USUARIO O CONTRASEÑA INVALIDO";
+        }
+    }
 
+    public function searchUser($users, $userNow)
+    {
+        $longitud = count($users);
+        $boolean = 0;
+        if ($longitud >0) {
+            if ($userNow->getUser() == "") {
+                $this->search = 0;
+                $boolean = 1;
+            }
+            if ($userNow->getPassword() == "") {
+                $this->search = 0;
+                $boolean = 1;
+            }
+            if ($boolean == 0) {
+                for ($i = 0; $i < $longitud; $i++) {
+                    if ($users[$i]->getUser() == $userNow->getUser()) {
+                        if ($users[$i]->getPassword() == $userNow->getPassword()) {
+                            $this->search = 1;
+                        }
+                    }
+                }
+                if ($this->search != 1) {
+                    $this->search = -1;
+                }
+            }
+        } else {
+            $this->search = -1;
+        }
 
+        return $users;
+    }
 
-		function getMessageDelete(){
-			if($this->delete == 1){
-				return "CUENTA ELIMINADA";
-			}
-			elseif ($this->delete == -1) {
-				return "ERROR CUENTA NO ENCONTRADA";
-			}
-			elseif($this->delete == 0){
-				return "USUARIO O CONTRASEÑA INVALIDO";
-			}
-		}
+    public function getMessageDelete()
+    {
+        if ($this->delete == 1) {
+            return "CUENTA ELIMINADA";
+        } elseif ($this->delete == -1) {
+            return "ERROR CUENTA NO ENCONTRADA";
+        } elseif ($this->delete == 0) {
+            return "USUARIO O CONTRASEÑA INVALIDO";
+        }
+    }
 
-		function deleteUser($ArrayUsers,$userNow){
-			$longitud = count($ArrayUsers);
-			$boolean = 0;
-			if($longitud >0){
-				if($userNow->getUser() == ""){
-					$this->delete = 0;
-					$boolean = 1;
-				}
-				if( $userNow->getPassword() == ""){
-					$this->delete = 0;
-					$boolean = 1;
-				}
-				if($boolean == 0){ 
-					for ($i=0; $i < $longitud; $i++) { 
-						if(($ArrayUsers[$i]->getUser() == $userNow->getUser()) and ($ArrayUsers[$i]->getPassword() == $userNow->getPassword())){
-							unset($ArrayUsers[$i]);
-							$this->delete = 1;
-							
-						}	
-					}
-					if($this->delete != 1){
-						$this->delete = -1;
-					}
-					
-				}
-			}
-			else{
-				$this->delete = -1;
-			}
-			return $ArrayUsers;
-		}
+    public function deleteUser($users, $userNow)
+    {
+        $longitud = count($users);
+        $boolean = 0;
+        if ($longitud >0) {
+            if ($userNow->getUser() == "") {
+                $this->delete = 0;
+                $boolean = 1;
+            }
+            if ($userNow->getPassword() == "") {
+                $this->delete = 0;
+                $boolean = 1;
+            }
+            if ($boolean == 0) {
+                for ($i = 0; $i < $longitud; $i++) {
+                    if ($users[$i]->getUser() == $userNow->getUser()) {
+                        if ($users[$i]->getPassword() == $userNow->getPassword()) {
+                            unset($users[$i]);
+                            $this->delete = 1;
+                        }
+                    }
+                }
+                if ($this->delete != 1) {
+                    $this->delete = -1;
+                }
+            }
+        } else {
+            $this->delete = -1;
+        }
 
-		
-		function getMessageCreate(){
-			if($this->create == 1){
-				return "CUENTA YA EXISTE";
-			}
-			elseif ($this->create == -1) {
-				return "CUENTA CREADA";
-			}
-			elseif($this->create == 0){
-				return "USUARIO O CONTRASEÑA INVALIDO";
-			}
-			
-		}
+        return $users;
+    }
 
-		function createUser($ArrayUsers,$userNew){
-			$longitud = count($ArrayUsers);
-			$boolean = 0;
-			if($longitud >0){
-				if($userNew->getUser() == ""){
-					$this->create = 0;
-					$boolean = 1;
-				}
-				if( $userNew->getPassword() == ""){
-					$this->create = 0;
-					$boolean = 1;
-				}
-				if($boolean == 0){ 
-					for ($i=0; $i < $longitud; $i++) { 
-						if(($ArrayUsers[$i]->getUser() == $userNew->getUser()) and ($ArrayUsers[$i]->getPassword() == $userNew->getPassword())){
-							$this->create = 1;
-							
-						}	
-					}
-					$ArrayUsers[$longitud] = $userNew;
-					if($this->create != 1){
-						$this->create = -1;
-					}
-					
-				}
-						
-			}
-			return $ArrayUsers;
-		}
+    public function getMessageCreate()
+    {
+        if ($this->create == 1) {
+            return "CUENTA YA EXISTE";
+        } elseif ($this->create == -1) {
+            return "CUENTA CREADA";
+        } elseif ($this->create == 0) {
+            return "USUARIO O CONTRASEÑA INVALIDO";
+        }
+    }
 
-	}
+    public function createUser($users, $userNew)
+    {
+        $longitud = count($users);
+        $boolean = 0;
+        if ($longitud >0) {
+            if ($userNew->getUser() == "") {
+                $this->create = 0;
+                $boolean = 1;
+            }
+            if ($userNew->getPassword() == "") {
+                $this->create = 0;
+                $boolean = 1;
+            }
+            if ($boolean == 0) {
+                for ($i = 0; $i < $longitud; $i++) {
+                    if ($users[$i]->getUser() == $userNew->getUser()) {
+                        if ($users[$i]->getPassword() == $userNew->getPassword()) {
+                            $this->create = 1;
+                        }
+                    }
+                    if ($i == ($longitud-1)) {
+                        $this->create = -1;
+                    }
+                }
 
-?>
+                $users[$longitud] = $userNew;
+            }
+        }
+
+        return $users;
+    }
+}
