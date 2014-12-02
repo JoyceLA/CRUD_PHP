@@ -20,7 +20,7 @@ before_script:
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
   ## PHPLOC
-  - curl -o phploc.phar https://phar.phpunit.de/phploc.phar
+  - pear install phpunit/phploc
   ##php-cs-fixer
   - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
 script:
@@ -28,7 +28,7 @@ script:
   ##Usuario.php
   - php php-cs-fixer.phar fix Usuario.php
   - phpcs --standard=Zend Usuario.php
-  - php phploc.phar Usuario.php
+  - phploc Usuario.php
   ##functions.php
   - php php-cs-fixer.phar fix functions.php
   - phpcs --standard=Zend functions.php
