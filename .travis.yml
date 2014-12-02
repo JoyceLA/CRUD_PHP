@@ -20,37 +20,37 @@ before_script:
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
   ## PHPLOC
-  - curl -o phploc.phar https://phar.phpunit.de/phploc.phar -o phploc
+  - curl -o phploc.phar https://phar.phpunit.de/phploc.phar -o phploc.phar
   ##php-cs-fixer
-  - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer
+  - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
 script:
   - cd app
   ##Usuario.php
-  - php-cs-fixer fix Usuario.php
+  - php-cs-fixer.phar fix Usuario.php
   - phpcs --standard=Zend Usuario.php
-  - phploc Usuario.php
+  - phploc.phar Usuario.php
   ##functions.php
-  - php-cs-fixer fix functions.php
+  - php-cs-fixer.phar fix functions.php
   - phpcs --standard=Zend functions.php
-  - phploc functions.php
+  - phploc.phar functions.php
   ##bienvenido.php
-  - php-cs-fixer fix bienvenido.php
+  - php-cs-fixer.phar fix bienvenido.php
   - phpcs --standard=Zend bienvenido.php
-  - phploc bienvenido.php
+  - phploc.phar bienvenido.php
   ##crearcuenta.php
-  - php-cs-fixer fix crearcuenta.php
+  - php-cs-fixer.phar fix crearcuenta.php
   - phpcs --standard=Zend crearcuenta.php
-  - phploc crearcuenta.php
+  - phploc.phar crearcuenta.php
   ##index.php
-  - php-cs-fixer fix index.php
+  - php-cs-fixer.phar fix index.php
   - phpcs --standard=Zend index.php
-  - phploc index.php
+  - phploc.phar index.php
 
   - cd test
   ##Test.php
-  - php-cs-fixer fix Test.php
+  - php-cs-fixer.phar fix Test.php
   - phpcs --standard=Zend Test.php
-  - phploc Test.php
+  - phploc.phar Test.php
   - phpunit Test.php
   - cd ..
   - phpunit --coverage-html . functions.php
