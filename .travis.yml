@@ -18,8 +18,8 @@ before_script:
  
 
 script:
-  
   - cd app/testCase
+  - phpunit --version
   - phpunit --printer PHPUnit_Extensions_Story_ResultPrinter_Text testCaseActualizar.php
   - phpunit --printer PHPUnit_Extensions_Story_ResultPrinter_Text testCaseBorrar.php
   - phpunit --printer PHPUnit_Extensions_Story_ResultPrinter_Text testCaseBuscar.php
