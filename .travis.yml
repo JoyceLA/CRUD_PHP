@@ -37,22 +37,20 @@ script:
   - phpcs --standard=Zend app/index.php
   - phpcs --standard=Zend app/bienvenido.php
   - phpcs --standard=Zend app/crearcuenta.php
-   
+  
   - phploc app/Usuario.php
   - phploc app/functions.php
   - phploc app/index.php
   - phploc app/bienvenido.php
   - phploc app/crearcuenta.php
-
-
-  ##UntTest  Test.php
+  
   - php-cs-fixer.phar fix  app/test/Test.php
   - phpcs --standard=Zend  app/test/Test.php
   - phploc app/test/Test.php
   - phpunit app/test/Test.php
   - phpunit --coverage-text . test/Test.php
   
-  ##TestSelenium
+
   -phpunit app/test/pruebas_selenium/.
  
  
