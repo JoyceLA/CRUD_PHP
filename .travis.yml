@@ -23,6 +23,7 @@ before_script:
   - phpenv rehash
   ##php-cs-fixer
   - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
+  - chmod +x php-cs-fixer.phar
 
 script:
   - cd app
