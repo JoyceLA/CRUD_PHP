@@ -26,22 +26,27 @@ before_script:
   - chmod +x php-cs-fixer.phar
 
 script:
-  - php php-cs-fixer.phar fix .
-  - phpcs --standard=Zend app/*.php
-  - phploc Usuario.php
-  - phploc functions.php
-  - phploc index.php
-  - phploc bienvenido.php
-  - phploc crearcuenta.php
+  - php php-cs-fixer.phar fix app/Usuario.php
+  
+  - phpcs --standard=Zend app/Usuario.php
+  - phpcs --standard=Zend app/functions.php
+  - phpcs --standard=Zend app/index.php
+  - phpcs --standard=Zend app/bienvenido.php
+  - phpcs --standard=Zend app/crearcuenta.php
+   
+  - phploc app/Usuario.php
+  - phploc app/functions.php
+  - phploc app/index.php
+  - phploc app/bienvenido.php
+  - phploc app/crearcuenta.php
 
-  - cd test
+
   ##Test.php
-  - php-cs-fixer.phar fix Test.php
-  - phpcs --standard=Zend Test.php
-  - phploc Test.php
-  - phpunit Test.php
-  - cd ..
-  - phpunit --coverage-html . Test.php
+  - php-cs-fixer.phar fix  app/test/Test.php
+  - phpcs --standard=Zend  app/test/Test.php
+  - phploc app/test/Test.php
+  - phpunit app/test/Test.php
+  - phpunit --coverage-text . test/Test.php
  
  
   
