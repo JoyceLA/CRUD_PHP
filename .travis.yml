@@ -32,11 +32,11 @@ script:
   - php php-cs-fixer.phar fix app/bienvenido.php
   - php php-cs-fixer.phar fix app/crearcuenta.php
   
-  - phpcs --standard=Zend app/Usuario.php
-  - phpcs --standard=Zend app/functions.php
-  - phpcs --standard=Zend app/index.php
-  - phpcs --standard=Zend app/bienvenido.php
-  - phpcs --standard=Zend app/crearcuenta.php
+  - phpcs --standard=Zend -n app/Usuario.php
+  - phpcs --standard=Zend -n app/functions.php
+  - phpcs --standard=Zend -n app/index.php
+  - phpcs --standard=Zend -n app/bienvenido.php
+  - phpcs --standard=Zend -n app/crearcuenta.php
   
   - phploc app/Usuario.php
   - phploc app/functions.php
