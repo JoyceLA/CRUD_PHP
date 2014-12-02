@@ -26,13 +26,13 @@ before_script:
 script:
   - cd app
   ##Usuario.php
-  - php-cs-fixer.phar fix Usuario.php
+  - php php-cs-fixer.phar fix Usuario.php
   - phpcs --standard=Zend Usuario.php
-  - phploc.phar Usuario.php
+  - php phploc.phar Usuario.php
   ##functions.php
-  - php-cs-fixer.phar fix functions.php
+  - php php-cs-fixer.phar fix functions.php
   - phpcs --standard=Zend functions.php
-  - phploc.phar functions.php
+  - php phploc.phar functions.php
   ##bienvenido.php
   - php-cs-fixer.phar fix bienvenido.php
   - phpcs --standard=Zend bienvenido.php
