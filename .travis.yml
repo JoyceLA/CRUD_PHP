@@ -18,7 +18,6 @@ before_script:
   - sleep 20
   ## PHP_CodeSniffer
   - pear install pear/PHP_CodeSniffer
-  - phpenv rehash
   ## PHPLOC
   - pear install phpunit/phploc
   - phpenv rehash
