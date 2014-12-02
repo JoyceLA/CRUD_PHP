@@ -51,7 +51,7 @@ script:
   - phpunit --coverage-text . test/Test.php
   
 
-  -phpunit app/test/pruebas_selenium/.
+  - phpunit app/test/pruebas_selenium/.
  
  
   
