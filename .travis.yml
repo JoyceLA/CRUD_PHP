@@ -46,7 +46,7 @@ script:
   - phpcs --standard=Zend  app/test/Test.php
   - phploc app/test/Test.php
   - phpunit app/test/Test.php
-  - phpunit --coverage-text . test/Test.php
+  - phpunit --coverage-text . app/test/Test.php
   
 
   - phpunit app/test/pruebas_selenium/crear_usuario.php
