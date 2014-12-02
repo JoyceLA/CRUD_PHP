@@ -22,12 +22,12 @@ before_script:
   - pear install phpunit/phploc
   - phpenv rehash
   ##php-cs-fixer
-  - wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
-  - chmod +x php-cs-fixer.phar
+  - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
+
 script:
   - cd app
   ##Usuario.php
-  - php php-cs-fixer.phar fix  Usuario.php
+  - if [[ `php -r "echo version_compare(PHP_VERSION, '5.3.6', '>=');"` ]]; then php php-cs-fixer.phar fix .; fi
   - phpcs --standard=Zend Usuario.php
   - phploc Usuario.php
   ##functions.php
