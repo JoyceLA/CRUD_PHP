@@ -47,16 +47,16 @@ script:
   - php php-cs-fixer.phar fix  app/test/Test.php
   - phpcs --standard=Zend  app/test/Test.php
   - phploc app/test/Test.php
-  - phpunit app/test/Test.php
-  - phpunit --coverage-text . app/test/Test.php
+  - cd app/test
+  - phpunit Test.php
+  - phpunit --coverage-text . Test.php
+  - phpunit testMock.php
   
-
-  - phpunit app/test/pruebas_selenium/crear_usuario.php
-  - phpunit app/test/pruebas_selenium/eliminar_usuario.php
-  - phpunit app/test/pruebas_selenium/ingresar_con_exito.php
-  - phpunit app/test/pruebas_selenium/iniciar_sesion_sin_estar_registrado.php
-  
-  - phpunit app/test/testMock.php
+  - cd pruebas_selenium
+  - phpunit crear_usuario.php
+  - phpunit eliminar_usuario.php
+  - phpunit ingresar_con_exito.php
+  - phpunit iniciar_sesion_sin_estar_registrado.php
  
  
   
