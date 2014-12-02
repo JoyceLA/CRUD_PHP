@@ -28,8 +28,12 @@ before_script:
 script:
   - cd app
   - php php-cs-fixer.phar fix .
-  - phpcs --standard=Zend .
-  - phploc .
+  - phpcs --standard=Zend *.php
+  - phploc Usuario.php
+  - phploc functions.php
+  - phploc index.php
+  - phploc bienvenido.php
+  - phploc crearcuenta.php
 
   - cd test
   ##Test.php
