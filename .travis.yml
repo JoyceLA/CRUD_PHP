@@ -27,6 +27,7 @@ before_script:
 
 script:
   - php php-cs-fixer.phar fix app/Usuario.php
+  - ls app/ -la
   - php php-cs-fixer.phar fix app/functions.php
   - php php-cs-fixer.phar fix app/index.php
   - php php-cs-fixer.phar fix app/bienvenido.php
