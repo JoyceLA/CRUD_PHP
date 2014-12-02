@@ -23,10 +23,10 @@
  */
 class Funciones
 {
-    private $_create = -2;
-    private $_delete = -2;
-    private $_update = -2;
-    private $_search = -2;
+    public $_create = -2;
+    public $_delete = -2;
+    public $_update = -2;
+    public $_search = -2;
 
     public function getMessageUpdate()
     {
