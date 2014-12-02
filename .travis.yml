@@ -9,7 +9,7 @@ before_install:
   - export PATH=$PATH:phpUtils/
   - sudo apt-get install php-codesniffer
   - wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer
-  - sudo chmod a+x php-cs-fixer
+  - chmod a+x php-cs-fixer
   - export PATH=$PATH:php-cs-fixer
   - wget https://phar.phpunit.de/phploc.phar
   - chmod +x phploc.phar
