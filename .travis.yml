@@ -26,9 +26,8 @@ before_script:
   - chmod +x php-cs-fixer.phar
 
 script:
-  - cd app
   - php php-cs-fixer.phar fix .
-  - phpcs --standard=Zend *.php
+  - phpcs --standard=Zend app/*.php
   - phploc Usuario.php
   - phploc functions.php
   - phploc index.php
