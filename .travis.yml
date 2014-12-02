@@ -5,40 +5,43 @@ language: php
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  ##PHPUnit
   - chmod +x phpUtils/phpunit
-  - export PATH=$PATH:phpUtils/
-  - sudo apt-get install php-codesniffer
+  - export PATH=$PATH:phpUtils
+  ##php-cs-fixer
   - wget http://get.sensiolabs.org/php-cs-fixer.phar -O php-cs-fixer
   - chmod a+x php-cs-fixer
   - export PATH=$PATH:php-cs-fixer
-  - wget https://phar.phpunit.de/phploc.phar
-  - chmod +x phploc.phar
-  - export PATH=$PATH:phploc
-
+  
 before_script: 
   - java -jar phpUtils/selenium-server.jar &
   - sleep 20
+  ## PHP_CodeSniffer
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+  ## PHPLOC
+  - curl -o phploc.phar https://phar.phpunit.de/phploc.phar
 script:
   - cd app
   - php-cs-fixer fix Usuario.php
   - phpcs --standard=Zend Usuario.php
-  - phploc Usuario.php
+  - php phploc.phar Usuario.php
   - php-cs-fixer fix functions.php
   - phpcs --standard=Zend functions.php
-  - phploc function.php
+  - php phploc.phar function.php
   - php-cs-fixer fix bienvenido.php
   - phpcs --standard=Zend bienvenido.php
-  - phploc.phar bienvenido.php
+  - php phploc.phar bienvenido.php
   - php-cs-fixer fix crearcuenta.php
   - phpcs --standard=Zend crearcuenta.php
-  - phploc.phar crearcuenta.php
+  - php phploc.phar crearcuenta.php
   - php-cs-fixer fix index.php
   - phpcs --standard=Zend index.php
-  - phploc.phar index.php
+  - php phploc.phar index.php
   - cd test
   - php-cs-fixer fix Test.php
   - phpcs --standard=Zend Test.php
-  - phploc.phar Test.php
+  - php phploc.phar Test.php
   - phpunit Test.php
   - cd ..
   - phpunit --coverage-html . functions.php
