@@ -36,10 +36,10 @@ script:
   - phpcs --standard=Zend index.php
   - phploc.phar index.php
   - cd test
-  - php-cs-fixer fix test.php
-  - phpcs --standard=Zend test.php
-  - phploc.phar test.php
-  - phpunit test.php
+  - php-cs-fixer fix Test.php
+  - phpcs --standard=Zend Test.php
+  - phploc.phar Test.php
+  - phpunit Test.php
   - cd ..
   - phpunit --coverage-html . functions.php
  
